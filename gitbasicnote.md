@@ -12,9 +12,13 @@
 4. 配置SSH：
 
   1. 查看是否创建id_rsa.pub文件：`cd ～/.ssh`
+  
   2. 如果未创建则创建id_rsa.pub文件：`$ ssh-keygen -t rsa -C "youremail@example.com"`
+  
   3. 查看SSH私钥：`cat ~/.ssh/id_rsa.pub`
+  
   4. 如果以前配置过SSH，可以用此命令检查连接是否正确：`$ ssh -T git@github.com`
+  
 
 # 2/完成Git和Github的绑定
 
