@@ -6,11 +6,9 @@
 3. 查看用户名和邮箱：
 
   > git config --global user.name
-  >
   > git config --global user.email
 
 4. 配置SSH：
-
   1.  查看是否创建id_rsa.pub文件：`cd ～/.ssh`
   2. 如果未创建则创建id_rsa.pub文件：`$ ssh-keygen -t rsa -C "youremail@example.com"`
   3. 查看SSH私钥：`cat ~/.ssh/id_rsa.pub`
