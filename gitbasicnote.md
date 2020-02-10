@@ -65,5 +65,29 @@
    5. 然后输入git add awm/和git commit -m "注释"，将文件夹提交到仓库中
    6. 之后再:git push origin master，将本地仓库内容提交到远程仓库。
 
+## 4/ Git每次push时都提示输入用户名和密码
 
+原因：我们在建立远程仓库或者克隆的时候，复制仓库地址使用的是HTTPS方式，HTTPS方式push不会保存用户名和密码。我们需要把HTTPS方式改为SSH方式
+
+1. 先cd到本地仓库目录中，输入`git remote -v` ，查看远程连接的方式，前缀为https则是https方式。
+2. 直接删除原先的连接方式：`git remote rm origin`
+3. 连接方式改为SSH方式：`git remote add origin 复制的仓库SSH地址`
+4. 完成：`git push origin`，重新用`git remote -v`查看连接方式
+5. 如果第4步出错，是因为没有将本地的分支与远程仓库分支进行关联，多进行一项操作就好：`git push --set-upstream origin master`.
+
+## 5/Git创建本地分支并关联远程分支
+
+- 创建本地分支：`git branch 分支名`
+
+- 切换到本地分支：`git checkout 分支名`
+
+- 创建本地分支并切换：`git checkout -b 分支名`，这条命令是上面两条的合并
+
+- 提交本地分支到远程仓库：`git push origin 分支名`，提交到远程分支，同时也在远程仓库创建了此分支
+
+- 新建本地分支与远程分支关联：`git branch -set-upstream 本地分支名 origin/远程分支名
+
+- 拉取远程分支：`git pull origin 远程分支名`
+
+  
 
