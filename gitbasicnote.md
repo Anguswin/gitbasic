@@ -63,7 +63,8 @@
    - 第二种情况是本地有Git仓库，并且我们已经有过commit操作
 
    1. 还是以刚才的xuexi仓库为例，在本地新建仓库文件夹xuexi，注意这里的文件夹名称必须与远程仓库的一致。cd到此目录下：`cd ~/Documents/Typora/xuexi/`
-   2. 初始化：git init；关联远程仓库：`git remote add origin https://github.com/Anguswin/xuexi.git`；同步远程仓库：`git pull origin master`
+   2. 初始化：git init；关联远程仓库：`git remote add origin https://github.com/Anguswin/xuexi.git`；
+   如果远程仓库中的README.md文件不在本地代码目录中，则需要执行此代码`git pull --rebase origin master`;同步远程仓库：`git pull origin master`
    3. 如果是我们刚才的已经commit过的本地xuexi仓库，不需要进行前两步，如果不确定是否和远程同步，即只用git pull origin master命令即可。
    4. 然后修改本地仓库的文件，或者创建文件，这里我们创建了awm文件夹
    5. 然后输入git add awm/和git commit -m "注释"，将文件夹提交到仓库中
